@@ -7,9 +7,11 @@ import AddContact from './conponents/AddContact';
 import ViewContact from './conponents/ViewContact';
 import EditContact from './conponents/EditContact';
 
+
 function App() {
   return (
     <div >
+     
       <Navbar />
       <Routes>
         <Route path={'/react-contact-manager-app'} element={<Navigate to={'/contacts/list'} /> } />

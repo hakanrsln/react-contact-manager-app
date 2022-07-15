@@ -1,0 +1,62 @@
+{
+    "contacts" : [
+        {
+            "id": "AA123",
+            "name" : "Ahmet",
+            "photo" : "https://gogeticon.net/files/1925428/fa0cbc2764f70113bf2fad3905933545.png",
+            "mobile" : "9655366223",
+            "email" : "ahmet@gmail.com",
+            "title" : "Software Engineer",
+            "company" : "Google",
+            "groupId" : "1"
+        },
+        {
+            "id": "AA567",
+            "name" : "Hasan",
+            "photo" : "https://www.pngmart.com/files/21/Admin-Profile-PNG-Clipart.png",
+            "mobile" : "165532652",
+            "email" : "ahasan@gmail.com",
+            "title" : "IT Specialist",
+            "company" : "Tesla",
+            "groupId" : "1"
+        },
+        {
+            "id": "AA3",
+            "name" : "Kaan",
+            "photo" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTboP3I7YVTIvLusl6s0sph0CDmXVW6wY4u8atSX4D2OKCfh7auYYZi0zuJpPmd8VmmA38&usqp=CAU",
+            "mobile" : "29682533",
+            "email" : "kaan@gmail.com",
+            "title" : "Student",
+            "company" : "Arward Univercity",
+            "groupId" : "2"
+        },
+        {
+            "id": "AA343",
+            "name" : "Tolga",
+            "photo" : "https://www.clickdar.com/wp-content/uploads/2016/04/person-flat.png",
+            "mobile" : "265498543",
+            "email" : "tolga@gmail.com",
+            "title" : "Sale Manager",
+            "company" : "Erarslan",
+            "groupId" : "3"
+        }
+    ],
+    "groups" : [
+        {
+            "id" : "1",
+            "name" : "Colleague"
+        },
+        {
+            "id" : "2",
+            "name" : "Family"
+        },
+        {
+            "id" : "3",
+            "name" : "Friends"
+        },
+        {
+            "id" : "4",
+            "name" : "Needed Numbers"
+        }
+    ]
+}

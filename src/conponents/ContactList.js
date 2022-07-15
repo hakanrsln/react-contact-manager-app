@@ -1,9 +1,35 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {Link} from 'react-router-dom';
+import { ContactService } from "../services/ContactService";
+import Spinner from "./Spinner";
 
 export default function ContactList(){
+
+    let [state, setState]= useState({
+        loading : false,  
+        contacts : [],
+        errorMessage:""
+    });
+
+   async function  handler(){
+        try {
+            setState({...state, loading:true});
+            let response = await ContactService.getAllContacts();
+            setState({...state, loading:false, contacts:response.data });
+        } catch (error) {
+            setState({...state, loading:false, errorMessage:error.message});
+        }
+    }
+
+    useEffect(  () => { 
+    handler();
+          
+}, []);
+
+let {loading, contacts, errorMessage} = state;
     return (
         <div>
+            
             <section className="contact-search p-3">
                 <div className="container">
                     <div className="grid">
@@ -39,33 +65,42 @@ export default function ContactList(){
                 </div>
             </section>
 
-             <section className="contact-list">
+            {
+                loading ? <Spinner/> : <div>
+
+<section className="contact-list">
                  <div className="container">
                         <div className="row">
-                            <div className="col-md-6">
-                                <div className="card">
+
+                            {
+                                contacts.length > 0 &&
+                                contacts.map(contact => {
+                                    return(
+
+                                        <div className="col-md-6" key={contact.id}>
+                                <div className="card my-2">
                                    <div className="card-body">
                                         <div className="row align-items-center d-flex justify-content-around">
                                             <div className="col-md-4">
-                                                <img src="https://gogeticon.net/files/1925428/fa0cbc2764f70113bf2fad3905933545.png" className=" contact-img" alt="profile"/>
+                                                <img src={contact.photo} className=" contact-img" alt="profile"/>
                                             </div>
 
                                             <div className="col-md-7">
                                                 <ul className="list-group">
                                                     <li className="list-group-item list-group-item-action">
-                                                        Name : <span className="fw-bold">Ahmet</span>
+                                                        Name : <span className="fw-bold">{contact.name}</span>
                                                     </li>
                                                     <li className="list-group-item list-group-item-action">
-                                                        Mobile : <span className="fw-bold">+5896525122</span>
+                                                        Mobile : <span className="fw-bold">{contact.mobile}</span>
                                                     </li>
                                                     <li className="list-group-item list-group-item-action">
-                                                        Email : <span className="fw-bold">Ahmet@gamil.com</span>
+                                                        Email : <span className="fw-bold">{contact.email}</span>
                                                     </li>
                                                 </ul>
                                             </div>
                                     
                                                 <div className="col-md-1 d-flex flex-column align-items-center "> 
-                                                    <Link to={'/contacts/view/:contactId'} className="btn btn-warning my-1">
+                                                    <Link to={`/contacts/view/${contact.id}`} className="btn btn-warning my-1">
                                                         <i className="fa fa-eye"/>
                                                     </Link>     
                                                     <Link to={'/contacts/edit/:contactId'} className="btn btn-primary my-1">
@@ -81,8 +116,21 @@ export default function ContactList(){
                                         </div>
                                 </div>
                             </div>
+
+                                    )
+                                })
+                            }
+                            
+                            
+
+                            
                        </div> 
                  </div>
              </section>
+
+                </div>
+            }
+
+             
        </div>)
 }
