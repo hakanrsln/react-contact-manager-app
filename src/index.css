@@ -1,0 +1,11 @@
+body{
+
+    font-family:'Ubuntu',sans-serif!important;
+    background-color:#eee8e4!important;
+}
+
+.contact-img {
+    width: 175px;
+    height: 175px;
+    border-radius: 50%;
+}

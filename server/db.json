@@ -1,0 +1,42 @@
+{
+  "contacts": [
+    {
+      "id": "AA343",
+      "name": "Tolga Babacan",
+      "photo": "https://www.clickdar.com/wp-content/uploads/2016/04/person-flat.png",
+      "mobile": "265498543",
+      "email": "tolga@gmail.com",
+      "title": "Sale Manager",
+      "company": "Erarslan",
+      "groupId": "3"
+    },
+    {
+      "name": "Fatma Guven",
+      "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuC3mB9srfxn4zEmn-izvOc0biAccQU8rgposwRWcW5Cb-HhZ-JlCIIyBl6UDt3sYc2Lw&usqp=CAU",
+      "mobile": "55543343",
+      "email": "fatma@gmail.com",
+      "company": "Doga Kolejleri",
+      "title": "Ogretmen",
+      "groupId": "3",
+      "id": "HT1FdPm"
+    }
+  ],
+  "groups": [
+    {
+      "id": "1",
+      "name": "Colleague"
+    },
+    {
+      "id": "2",
+      "name": "Family"
+    },
+    {
+      "id": "3",
+      "name": "Friends"
+    },
+    {
+      "id": "4",
+      "name": "Needed Numbers"
+    }
+  ]
+}
